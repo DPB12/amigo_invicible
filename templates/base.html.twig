@@ -12,6 +12,18 @@
         {% endblock %}
     </head>
     <body>
+    			{% if app.user %}
+				<p>Bienvenido
+					{{ app.user.username}}</p>
+				<a href="/logout">Logout</a>
+				<br>
+
+			{% else %}
+                <h2 style="color: red;">Inicia sesion para estar en los mejores Amigos invisibles</h2>
+				<a href="/login" style="padding-right: 10px;">Login</a>
+				<a href="/register">Registrar</a>
+
+			{% endif %}
         {% block body %}{% endblock %}
     </body>
 </html>

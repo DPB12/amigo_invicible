@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Itinerary
+{% endblock %}
+
+{% block body %}
+	<h1>Itinerary</h1>
+
+
+	<form
+		method="post">
+
+		{# Campo del formulario para el checkbox   action="{{ path('app_show_buy', {'id': ''})}}"#}
+		<div style="border: 3px solid black; padding: 10px; width: fit-content;">
+			{% for user in users %}
+					<label style="border: 3px solid black; margin: 10px;  margin-top: 5px;">
+						<span>
+							<input type="checkbox" name="mi_checkbox[]" value="" style="margin: 5px"/>
+							<span style="margin: 5px">{{ user.username }}</span>
+						</span>
+					</label>
+			{% endfor %}
+
+            <br><br>
+            <input type="number" name="precioSorteo">
+            <input type="date" name="fechaSorteo" />
+		</div>
+
+        for
+		{# Botón de submit #}
+		<button type="submit">Crear sorteo</button>
+	</form>
+
+{% endblock %}
